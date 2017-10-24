@@ -1,7 +1,7 @@
 #### Universidade Federal do Rio Grande do Norte <br> Instituito Metrópole Digital
-Aluno: Josivan Medeiros da Silva Gois
-Matrícula: 20160147626
-Professor: Silvio Costa Sampaio
+<br>Aluno: Josivan Medeiros da Silva Gois
+<br>Matrícula: 20160147626
+<br>Professor: Silvio Costa Sampaio
 
 # Laboratório 3 - Linguagem de Programação 1
 Terceiro laboratório da disciplina de Linguagem de Programação 1 do curso de Tecnologia da Informação. 
