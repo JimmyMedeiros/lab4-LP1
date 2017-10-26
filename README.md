@@ -3,7 +3,7 @@
 <br>Matrícula: 20160147626
 <br>Professor: Silvio Costa Sampaio
 
-# Laboratório 3 - Linguagem de Programação 1
+# Laboratório 4 - Linguagem de Programação 1
 Terceiro laboratório da disciplina de Linguagem de Programação 1 do curso de Tecnologia da Informação. 
 
 @TODO
@@ -11,7 +11,7 @@ Terceiro laboratório da disciplina de Linguagem de Programação 1 do curso de 
 ## Intruções de Compição:
 - make all:<br>
 Compila todos os programas
-- make questaon:<br>
+- make programa n:<br>
 Compila o programa n, sendo n o número do programa que pode ser: 01, 02 ou 03
 - make debug:<BR>
 Compila os programas em modo de depuração

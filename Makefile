@@ -1,6 +1,6 @@
 .PHONY: all clean distclean doxy
 
-all: dir programa01 questao02
+all: dir programa01 programa02
 
 CC = g++
 CPPFLAGS = -Wall -pedantic -ansi -std=c++11 -pg
@@ -21,9 +21,9 @@ dir:
 
 # Opção para depurar (só a questão 03)
 debug: CPPFLAGS += -g -O0
-debug: questao01 questao02
+debug: programa01 programa02
 
-####	Questão 01		####
+####	Programa 01		####
 programa01: $(OBJ_DIR)/main1.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
@@ -36,29 +36,16 @@ programa01: $(OBJ_DIR)/main1.o
 $(OBJ_DIR)/main1.o: $(SRC_DIR)/programa01/main1.cpp
 	$(CC) -c $(CPPFLAGS) -I$(INC_DIR) -o $@ $<
 
-$(OBJ_DIR)/company.o: $(SRC_DIR)/questao01/company.cpp
-	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
-
-$(OBJ_DIR)/employee.o: $(SRC_DIR)/questao01/employee.cpp 
-	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
-
-$(OBJ_DIR)/date.o: $(SRC_DIR)/questao01/date.cpp
-	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao01 -o $@ $<
-
-####	Questão 02		####
-programa02: $(OBJ_DIR)/main2.o $(OBJ_DIR)/dado.o $(OBJ_DIR)/player.o
+####	Programa 02		####
+programa02: $(OBJ_DIR)/main2.o
 	@echo "============="
 	@echo "Ligando o alvo $@"
 	@echo "============="
 	$(CC) $(CPPFLAGS) -o $(BIN_DIR)/$@ $^
 	@echo "+++ [Executavel programa02 criado em $(BIN_DIR)] +++"
 	@echo "============="
-$(OBJ_DIR)/main2.o: $(SRC_DIR)/questao02/main2.cpp
-	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao02 -o $@ $<
-$(OBJ_DIR)/dado.o: $(SRC_DIR)/questao02/dado.cpp
-	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao02 -o $@ $<
-$(OBJ_DIR)/player.o: $(SRC_DIR)/questao02/player.cpp
-	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/questao02 -o $@ $<
+$(OBJ_DIR)/main2.o: $(SRC_DIR)/programa02/main2.cpp
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/ -o $@ $<
 
 # Alvo (target) para a geração automatica de documentacao usando o Doxygen.
 # Sempre remove a documentacao anterior (caso exista) e gera uma nova.
