@@ -21,7 +21,7 @@ dir:
 
 # Opção para depurar (só a questão 03)
 debug: CPPFLAGS += -g -O0
-debug: programa01 programa02
+debug: programa01 programa02 programa03
 
 ####	Programa 01		####
 programa01: $(OBJ_DIR)/main1.o
@@ -45,6 +45,17 @@ programa02: $(OBJ_DIR)/main2.o
 	@echo "+++ [Executavel programa02 criado em $(BIN_DIR)] +++"
 	@echo "============="
 $(OBJ_DIR)/main2.o: $(SRC_DIR)/programa02/main2.cpp
+	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/ -o $@ $<
+
+####	Programa 03		####
+programa03: $(OBJ_DIR)/main3.o
+	@echo "============="
+	@echo "Ligando o alvo $@"
+	@echo "============="
+	$(CC) $(CPPFLAGS) -o $(BIN_DIR)/$@ $^
+	@echo "+++ [Executavel $@ criado em $(BIN_DIR)] +++"
+	@echo "============="
+$(OBJ_DIR)/main3.o: $(SRC_DIR)/programa03/main3.cpp
 	$(CC) -c $(CPPFLAGS) -I$(INC_DIR)/ -o $@ $<
 
 # Alvo (target) para a geração automatica de documentacao usando o Doxygen.

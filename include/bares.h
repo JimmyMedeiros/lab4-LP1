@@ -29,11 +29,16 @@ bool is_operand( symbol s )
 	return s >= '0' and s <= '9' ;
 }
 
+/**
+ * @brief	Verfifica se o símbolo é um operador.
+ */
 bool is_operator( symbol c ) 
 {
 	return std::string("+-*/%%^").find( c ) != std::string::npos;
 }
-
+ /**
+  * @brief	Converte um char para um inteiro.
+  */
 value_type char2integer( symbol ch ) 
 {
 	return ch - '0';
